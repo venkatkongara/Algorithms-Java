@@ -27,28 +27,20 @@ private ArrayList<String> findCombinations(ArrayList<Integer> sampleSet,int targ
     int selectedNum = 0;
     int sum = 0;
     int i =0;
-    while(sum < target && i<sampleSet.size()) {
-        selectedNum = sampleSet.get(i);
-        sum = sum + selectedNum;
-        i++;
-        ArrayList<Integer> reducedList = new ArrayList<>(sampleSet);
-        reducedList.remove(i-1);
-        list.addAll(findCombinations(reducedList, target));
-    }
-    if(sum >= target) {
-        if(sum == target) {
-            String combo = "0";
-            for(int j=0;j<i;j++) {
-                combo = combo + "," + sampleSet.get(j).toString();
-            }
-            list.add(combo);
-            ArrayList<Integer> reducedList = new ArrayList<>(sampleSet);
-            reducedList.remove(i-1);
-            list.addAll(findCombinations(reducedList, target));
-        }
-        ArrayList<Integer> reducedList = new ArrayList<>(sampleSet);
-        reducedList.remove(0);
-        list.addAll(findCombinations(reducedList, target));
-    }
+    while(sum <= target && i<sampleSet.size()) {
+		 selectedNum = sampleSet.get(i);
+		 sum = sum + selectedNum;
+		 i++;
+		 if(sum == target) {
+			 String combo = "0";
+			 for(int j=0;j<i;j++) {
+				 combo = combo + "," + sampleSet.get(j).toString();
+			 }
+			 list.add(combo);
+		 }
+		 ArrayList<Integer> reducedList = new ArrayList<>(sampleSet);
+		 reducedList.remove(i-1);
+		 list.addAll(findCombinations(reducedList, target));
+	 }
     return list;
 }
