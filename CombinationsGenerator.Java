@@ -6,6 +6,7 @@
 //	  list.add(i);
 //  }
 //  printCombinations(list,"");
+// Author: Venkat Kongara
   
   public static <T> String printCombinations(ArrayList<T>array,String previous) {
 	  String current = "";
