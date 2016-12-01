@@ -8,7 +8,7 @@
 // System.out.println(knapSackProblem(sampleSet, 8));
 //
 // would print [0,1,3,4, 0,1,2,5, 0,3,5, 0,2,6, 0,1,7] as output set of combinations for target 8
-
+// Author Venkat Kongara
 
 // knapsack problem solution using backtracking
 public HashSet<String> knapSackProblem(ArrayList<Integer> sampleSet,int target) {
