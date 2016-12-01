@@ -1,5 +1,16 @@
-// knapsack problem solution using backtracking
-public static HashSet<String> knapSackProblem(ArrayList<Integer> sampleSet,int target) {
+// knapsack problem solution using backtracking. use this method to get the answer with all the possible combinations.
+// example:
+//	  int[] sampleArray = {10,2,3,4,5,6,7,1};
+//	  ArrayList<Integer> sampleSet = new ArrayList<>();
+//	  for(int num:sampleArray) {
+//		  sampleSet.add(num);
+//	  }
+// System.out.println(knapSackProblem(sampleSet, 8));
+
+// would print [0,1,3,4, 0,1,2,5, 0,3,5, 0,2,6, 0,1,7] as output set of combinations for target 8
+
+	  System.out.println(knapSackProblem(sampleSet, 8));
+public HashSet<String> knapSackProblem(ArrayList<Integer> sampleSet,int target) {
 Set<String> set = new HashSet<String>();
 Collections.sort(sampleSet);
 ArrayList<String> list = findCombinations(sampleSet, target);
@@ -7,7 +18,7 @@ set.addAll(list);
 return (HashSet<String>) set;
 }
 
-public static ArrayList<String> findCombinations(ArrayList<Integer> sampleSet,int target) {
+private ArrayList<String> findCombinations(ArrayList<Integer> sampleSet,int target) {
 ArrayList<String> list = new ArrayList<>();
 if(sampleSet.size() == 0) {
 return list;
