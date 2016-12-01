@@ -14,8 +14,8 @@
 		  current = array.get(i).toString();
 		  ArrayList<T> temp = new ArrayList<T>(array);
 		  temp.remove(i);
-		  String nextDigit = printCombinations(temp,previous + current);
-		  if(nextDigit == "") {
+		  String nextItem = printCombinations(temp,previous + current);
+		  if(nextItem == "") {
 			  System.out.println(previous + current);
 		  }
 	  }
